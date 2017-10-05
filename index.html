@@ -34,19 +34,6 @@
   <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
   <meta name="msapplication-TileColor" content="#2F3BA2">
  
- <script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('service-worker.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-</script>
  
 </head>
 <body>
@@ -184,6 +171,10 @@ if ('serviceWorker' in navigator) {
 
   <!-- Uncomment the line below when ready to test with fake data -->
   <script src="scripts/app.js" async></script>
-
+<script>
+				if ('serviceWorker' in navigator) {
+					navigator.serviceWorker.register('service-worker.js');
+				}
+			</script>
 </body>
 </html>
